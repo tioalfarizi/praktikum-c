@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main() {
+    
+    printf("Nama : Nama Lengkap Kamu\n");
+    printf("NIM  : 123456789\n");
+    printf("Hobi : Main Game dan Coding\n");
 
-   printf("Hello World\n");
-   printf("Selamat datang di praktikum Pemrograman Dasar\n");
-   printf("Selamat datang di Matkul Pemrograman Dasar\n");
-   
-   return 0;
-}
+    return 0;
+} 

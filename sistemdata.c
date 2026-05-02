@@ -1,64 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Definisi struct mahasiswa
 struct Mahasiswa {
     char nama[50];
-    int nim;
     float nilai;
 };
 
 int main() {
     int n, i;
-    struct Mahasiswa *mhs;
-    float totalNilai = 0, rataRata;
+    float total = 0, rata_rata;
+    struct Mahasiswa *ptr;
 
-    printf("=== Sistem Data Nilai Mahasiswa ===\n");
     printf("Masukkan jumlah mahasiswa: ");
     scanf("%d", &n);
 
-    // Alokasi memori dinamis menggunakan pointer
-    mhs = (struct Mahasiswa*) malloc(n * sizeof(struct Mahasiswa));
+    ptr = (struct Mahasiswa*) malloc(n * sizeof(struct Mahasiswa));
 
-    // Cek jika alokasi gagal
-    if (mhs == NULL) {
-        printf("Gagal mengalokasikan memori!\n");
+    if (ptr == NULL) {
+        printf("Memori tidak cukup!\n");
         return 1;
     }
 
-    // Input data menggunakan pointer
     for (i = 0; i < n; i++) {
         printf("\nMahasiswa ke-%d\n", i + 1);
-        printf("Nama: ");
-        scanf(" %[^\n]s", (mhs + i)->nama);
-        printf("NIM: ");
-        scanf("%d", &(mhs + i)->nim);
+        printf("Nama : ");
+        scanf(" %[^\n]s", (ptr + i)->nama);
         printf("Nilai: ");
-        scanf("%f", &(mhs + i)->nilai);
-
-        // Menjumlahkan nilai untuk rata-rata
-        totalNilai += (mhs + i)->nilai;
+        scanf("%f", &(ptr + i)->nilai);
+        
+        total += (ptr + i)->nilai;
     }
 
-    // Menghitung rata-rata
-    rataRata = totalNilai / n;
+    rata_rata = total / n;
 
-    // Menampilkan data
-    printf("\n============================================\n");
-    printf("%-20s %-10s %-10s\n", "Nama", "NIM", "Nilai");
-    printf("--------------------------------------------\n");
-
+    printf("\n--- Daftar Nilai Mahasiswa ---\n");
     for (i = 0; i < n; i++) {
-        printf("%-20s %-10d %-10.2f\n", 
-               (mhs + i)->nama, (mhs + i)->nim, (mhs + i)->nilai);
+        printf("%d. %-20s : %.2f\n", i + 1, (ptr + i)->nama, (ptr + i)->nilai);
     }
 
-    printf("--------------------------------------------\n");
-    printf("Rata-rata Nilai Kelas: %.2f\n", rataRata);
-    printf("============================================\n");
+    printf("------------------------------\n");
+    printf("Rata-rata Nilai: %.2f\n", rata_rata);
 
-    // Bebaskan memori
-    free(mhs);
+    free(ptr);
 
     return 0;
 }

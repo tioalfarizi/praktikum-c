@@ -1,0 +1,20 @@
+=== LAPORAN ANALISIS TEKS ===
+
+Jumlah Baris      : 4
+Jumlah Kata       : 27
+Jumlah Huruf Vokal: 71
+Jumlah Konsonan   : 116
+
+=== TOP 5 KATA ===
+python : 4
+pemrograman : 2
+belajar : 2
+adalah : 1
+bahasa : 1
+
+=== GRAFIK FREKUENSI ===
+python ####
+pemrograman ##
+belajar ##
+adalah #
+bahasa #

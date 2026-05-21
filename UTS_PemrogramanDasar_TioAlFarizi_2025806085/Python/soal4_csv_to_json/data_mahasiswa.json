@@ -1,0 +1,20 @@
+[
+    {
+        "nama": "Rina",
+        "nim": "2310001",
+        "nilai_akhir": 85.5,
+        "mutu": "A"
+    },
+    {
+        "nama": "Doni",
+        "nim": "2310002",
+        "nilai_akhir": 61.5,
+        "mutu": "C"
+    },
+    {
+        "nama": "Tio",
+        "nim": "2025806085",
+        "nilai_akhir": 90.0,
+        "mutu": "A"
+    }
+]
